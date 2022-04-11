@@ -1,0 +1,210 @@
+this will include all the explanation
+
+when we write the const or final word before the
+variable this will make that varaible constant like if we want
+to change that variable value then it will give errors
+like 
+
+const int myconst 10;
+final int myfinal = 20;
+
+so if we write 
+
+myconst = 15;  so this will give error. same is the case wit the final
+
+
+
+
+so we have created this below class is tthat if we want 
+to change some properties with in the same 
+class that we use as not every one card will have the same icons and
+the colour etc. so here we give it constructor so that 
+when what type of the icons or text we want at that specific 
+place we can do at that place.
+
+
+class customCardIcon extends StatelessWidget {
+  customCardIcon({required this.customicon, required this.labeltext});
+  final IconData customicon;
+  final String labeltext;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          customicon,
+          size: 80.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          labeltext,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0XFF8D8E98),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+--------------------------------
+
+  GETURE DETECTOR
+agar hm chahtay k hm kisi cheez ko press karein orr wo color change
+karay ya iss tarah orr kch so hm ye flat button ya orr koi button
+ko kr sktay thay magar. agar waaha par flat button ko detay tu waha prr 
+uss ki styling kharab ho jati tu yaha par humaray liye gesturedetector
+jiss ki waja say hm ye tu kr sktay hain k yara prr kisi nay kch kiya hai
+ya hove effect etc magar is ka design k liye koii effet nai hoga.
+it has various properties like ontap longpress etc
+
+----------------------------
+
+simplified if else  after this we will change it.
+
+// 1 = male, 2 = female
+  void updateColor(int gender) {
+    if (gender == 1) {
+      if (maleCardColor == inactiveCardColor) {
+        maleCardColor = activeCardColor;
+        femaleCardColor = inactiveCardColor;
+      } else {
+        maleCardColor = inactiveCardColor;
+      }
+    } else {
+      if (gender == 2) {
+        if (femaleCardColor == inactiveCardColor) {
+          femaleCardColor = activeCardColor;
+          maleCardColor = inactiveCardColor;
+        } else {
+          femaleCardColor = inactiveCardColor;
+        }
+      }
+    }
+  }
+
+  ----------------
+
+  ENUMS : 
+
+  we can use enums when we want to select bw many things like high low medium
+  then we can speciy the enums and then give some values 
+  then when it is select then do this or that. example 
+  is give in inpupage.dart file. (for gender method)
+
+
+enums example : 
+void main (){
+  Car mycar = Car(carStyle:CarTypes.convertabel);
+}
+
+class Car {
+  CarTypes carStyle;
+  Car({required this.carStyle});
+}
+
+enum CarTypes{
+  hatchback, suv, convertabel, coupe,
+}
+
+ so when we want to write the type of the car that are convertable
+ then we can do that  like above in the constructor 
+ simple example is in the gender example behindd
+
+ ------------------------------
+
+ TERNORY OPERATOR :
+
+  void main (){
+  bool aliAwesome = false;
+//   if(aliAwesome == false){
+//     print('condition match');
+//   }
+//   else{
+//     print('condition does not match');
+//   }
+  
+  // another method for conditional statement
+  
+  aliAwesome == false ? print('condition match') : print('conditon not match');
+  
+ // so the above lines of code and this lind of code work same 
+   // but this has less lines of code and above one has more.
+}
+--- another example ----------- turnory -----------
+void main (){
+  
+  int myage = 20;
+  bool canDrive = myage > 20 ? true : false;
+  
+  print(canDrive);
+}
+
+---------------
+
+
+//   Color maleCardColor = inactiveCardColor;
+//   Color femaleCardColor = inactiveCardColor;
+
+// // 1 = male, 2 = female
+//   void updateColor(Gender selectedGender) {
+//     if (selectedGender == Gender.male) {
+//       if (maleCardColor == inactiveCardColor) {
+//         maleCardColor = activeCardColor;
+//         femaleCardColor = inactiveCardColor;
+//       } else {
+//         maleCardColor = inactiveCardColor;
+//       }
+//     } else {
+//       if (selectedGender == Gender.felame) {
+//         if (femaleCardColor == inactiveCardColor) {
+//           femaleCardColor = activeCardColor;
+//           maleCardColor = inactiveCardColor;
+//         } else {
+//           femaleCardColor = inactiveCardColor;
+//         }
+//       }
+//     }
+//   }
+
+
+in dart there is also Map function which act like as
+the dictiionary in the python the syntax is given below.
+first we have to specify that what type of data will have
+in the key and then values so below the key will be 
+string so we put string and the value will be the int 
+so we write int and the name of the map which is here phonebook
+and inorder to call we can use 
+print(phoneBook['Ali']);
+so this will print the value of ALi
+ Map<String, int> phoneBook = {
+    'Maaz': 57849,
+    'Ali': 58339,
+    'khan': 89410,
+    'She': 08492,
+  };
+
+  some more improvements
+  void main() {
+ print(phoneBook['Ali']);
+  phoneBook['max'] = 3334;
+  print(phoneBook);
+  print(phoneBook.length);
+  print(phoneBook['max']);
+  print(phoneBook.keys);
+  print(phoneBook.values);
+}
+
+ Map<String, int> phoneBook = {
+    'Maaz': 57849,
+    'Ali': 58339,
+    'khan': 89410,
+    'She': 08492,
+  };
+
+

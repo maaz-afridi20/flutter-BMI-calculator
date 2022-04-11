@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'constants.dart';
+
+class BottomButton extends StatelessWidget {
+  BottomButton({required this.buttonTitle, required this.onTap});
+
+  final VoidCallback onTap;
+  final String buttonTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        child: Center(
+          child: Text(
+            buttonTitle,
+            style: KLargeButtonTextStyle,
+          ),
+        ),
+        color: bottomContainerColor,
+        width: double.infinity,
+        height: bottomContainerHeight, // this is specify above
+        // so if we want to change then we can do it easily
+        margin: const EdgeInsets.only(top: 10.0),
+      ),
+    );
+  }
+}
